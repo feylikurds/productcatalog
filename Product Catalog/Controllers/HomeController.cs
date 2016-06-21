@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Product_Catalog.Models;
 
 namespace Product_Catalog.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            var products = db.Products.Include(p => p.Category);
+
+            return View(products.ToList());
         }
 
         public ActionResult About()
