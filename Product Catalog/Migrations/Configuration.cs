@@ -39,7 +39,7 @@ namespace Product_Catalog.Migrations
 
             var products = Builder<Product>.CreateListOfSize(100).All()
                 .With(p => p.Name = Faker.Name.Last())
-                .With(p => p.Price = Faker.RandomNumber.Next(10))
+                .With(p => p.Price = Faker.RandomNumber.Next(1, 10))
                 .With(p => p.Description = Faker.Lorem.Sentence())
                 .With(p => p.Category = categories.ElementAt(r.Next(0, categories.Count())))
                 .Build();
