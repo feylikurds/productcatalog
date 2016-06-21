@@ -1,5 +1,7 @@
 namespace Product_Catalog.Migrations
 {
+    using FizzWare.NBuilder;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +28,23 @@ namespace Product_Catalog.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var categories = Builder<Category>.CreateListOfSize(10).All()
+                .With(c => c.Name = Faker.Internet.DomainWord())
+                .Build();
+
+            context.Categories.AddOrUpdate(c => c.CategoryId, categories.ToArray());
+
+            var r = new Random();
+
+            var products = Builder<Product>.CreateListOfSize(100).All()
+                .With(p => p.Name = Faker.Name.Last())
+                .With(p => p.Price = Faker.RandomNumber.Next(10))
+                .With(p => p.Description = Faker.Lorem.Sentence())
+                .With(p => p.Category = categories.ElementAt(r.Next(0, categories.Count())))
+                .Build();
+
+            context.Products.AddOrUpdate(p => p.ProductId, products.ToArray());
         }
     }
 }
