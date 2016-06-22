@@ -10,6 +10,7 @@ using Product_Catalog.Models;
 
 namespace Product_Catalog.Controllers
 {
+    [Authorize(Roles = "AppAdmin")]
     public class CategoriesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -10,6 +10,7 @@ using Product_Catalog.Models;
 
 namespace Product_Catalog.Controllers
 {
+    [Authorize(Roles = "AppAdmin")]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -22,6 +23,7 @@ namespace Product_Catalog.Controllers
         }
 
         // GET: Products/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)

@@ -33,6 +33,7 @@ namespace Product_Catalog.Controllers
             return View();
         }
 
+        [Authorize(Roles = "AppAdmin")]
         public ActionResult Admin()
         {
             ViewBag.Message = "Admin page.";
