@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Security:</dt>
+        <dd>
+            @Html.ActionLink("Manage", "Index", "Manage")
+        </dd>
+        
+        <dt>Store:</dt>
+        <dd>
+            @Html.ActionLink("Products", "Index", "Products")
+        </dd>
+        <dd>
+            @Html.ActionLink("Catagories", "Index", "Categories")
+        </dd>
+    </dl>
+</div>
+

@@ -21,14 +21,21 @@ namespace Product_Catalog.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About page.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact page.";
+
+            return View();
+        }
+
+        public ActionResult Admin()
+        {
+            ViewBag.Message = "Admin page.";
 
             return View();
         }
