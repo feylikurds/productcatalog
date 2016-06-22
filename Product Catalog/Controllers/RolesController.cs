@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace Product_Catalog.Controllers
 {
+    [Authorize(Roles = "AppAdmin")]
     public class RolesController : Controller
     {
         ApplicationDbContext context = new ApplicationDbContext();

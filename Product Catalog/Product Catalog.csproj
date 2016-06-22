@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201606212226369_Changed_Product_and_Category.Designer.cs">
       <DependentUpon>201606212226369_Changed_Product_and_Category.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606220303469_Added_Information.cs" />
+    <Compile Include="Migrations\201606220303469_Added_Information.Designer.cs">
+      <DependentUpon>201606220303469_Added_Information.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -323,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606212226369_Changed_Product_and_Category.resx">
       <DependentUpon>201606212226369_Changed_Product_and_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606220303469_Added_Information.resx">
+      <DependentUpon>201606220303469_Added_Information.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

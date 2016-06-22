@@ -62,6 +62,7 @@ namespace Product_Catalog.Migrations
                 .With(p => p.Name = Faker.Name.Last())
                 .With(p => p.Price = Faker.RandomNumber.Next(1, 10))
                 .With(p => p.Description = Faker.Lorem.Sentence())
+                .With(p => p.Information = Faker.Lorem.Paragraph())
                 .With(p => p.Category = categories.ElementAt(rand.Next(0, categories.Count())))
                 .Build();
 
