@@ -42,7 +42,10 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", "Products", new { id = item.ProductId }, null)
+                <a href="@Url.Action("Details", "Products", new { id = item.ProductId }, null)" class="btn btn-warning btn-xs" style="padding: 0px;">
+                    More info
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                </a>
             </td>
         </tr>
     }
